@@ -10,6 +10,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.List;
 
 @RestController
 @RequestMapping(path = "/task")
@@ -31,21 +32,27 @@ public class TaskController {
     }
 
     @PutMapping("/{id}")
-    @ResponseStatus(HttpStatus.ACCEPTED)
+    @ResponseStatus(HttpStatus.OK)
     public void update(@PathVariable Long id, @RequestBody @Valid TaskRequest request) {
         request.setId(id);
         this.service.save(this.converter.encode(request));
     }
 
     @DeleteMapping("/{id}")
-    @ResponseStatus(HttpStatus.ACCEPTED)
+    @ResponseStatus(HttpStatus.OK)
     public void delete(@PathVariable Long id) {
         this.service.delete(id);
     }
 
     @PatchMapping("/{id}")
-    @ResponseStatus(HttpStatus.ACCEPTED)
+    @ResponseStatus(HttpStatus.OK)
     public void changeState(@PathVariable Long id, @RequestBody @Valid TaskChangeStateRequest request) {
         this.service.changeState(id, request.getState());
+    }
+
+    @GetMapping()
+    @ResponseStatus(HttpStatus.OK)
+    public List<Task> list() {
+        return this.service.findAll();
     }
 }

@@ -5,6 +5,7 @@ import br.com.supero.tasklist.repository.TaskRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Objects;
 
 @Service
@@ -29,5 +30,9 @@ public class TaskService {
         Task task = this.repository.findById(id).orElse(null);
         Objects.requireNonNull(task).setState(state);
         this.repository.save(task);
+    }
+
+    public List<Task> findAll() {
+        return this.repository.findAll();
     }
 }
