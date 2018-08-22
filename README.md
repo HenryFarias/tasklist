@@ -9,4 +9,6 @@
 
 `mvn install`
 
-OBS: Junto com a aplicação encontra-se um dump da minha base de testes.
+OBS1: Junto com a aplicação encontra-se um dump da minha base de testes.
+
+OBS2: Modificar o arquivo arquivo application.properties para as configurações necessárias da base.
