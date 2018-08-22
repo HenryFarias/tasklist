@@ -55,4 +55,10 @@ public class TaskController {
     public List<Task> list() {
         return this.service.findAll();
     }
+
+    @GetMapping("/{id}")
+    @ResponseStatus(HttpStatus.OK)
+    public Task find(@PathVariable Long id) {
+        return this.service.findById(id);
+    }
 }

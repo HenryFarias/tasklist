@@ -13,7 +13,6 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 public class TaskChangeStateRequest {
-
     @NotNull(message = "Status é obrigatório")
     private Boolean state;
 }

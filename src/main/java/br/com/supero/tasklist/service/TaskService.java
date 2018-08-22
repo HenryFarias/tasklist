@@ -35,4 +35,8 @@ public class TaskService {
     public List<Task> findAll() {
         return this.repository.findAll();
     }
+
+    public Task findById(Long id) {
+        return this.repository.findById(id).orElse(null);
+    }
 }

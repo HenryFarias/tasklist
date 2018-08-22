@@ -59,6 +59,8 @@ public class Task {
     protected void onCreate() {
         if (this.state) {
             this.completedAt = new Date();
+        } else {
+            this.completedAt = null;
         }
         this.createdAt = new Date();
     }
@@ -67,6 +69,8 @@ public class Task {
     protected void onUpdate() {
         if (this.state) {
             this.completedAt = new Date();
+        } else {
+            this.completedAt = null;
         }
         this.updatedAt = new Date();
     }
