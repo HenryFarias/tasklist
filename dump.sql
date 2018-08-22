@@ -24,7 +24,7 @@ CREATE TABLE IF NOT EXISTS `hibernate_sequence` (
 -- Copiando dados para a tabela tasklist.hibernate_sequence: 1 rows
 /*!40000 ALTER TABLE `hibernate_sequence` DISABLE KEYS */;
 INSERT INTO `hibernate_sequence` (`next_val`) VALUES
-	(6);
+	(8);
 /*!40000 ALTER TABLE `hibernate_sequence` ENABLE KEYS */;
 
 -- Copiando estrutura para tabela tasklist.task
@@ -38,14 +38,16 @@ CREATE TABLE IF NOT EXISTS `task` (
   `updated_at` datetime DEFAULT NULL,
   `deleted_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 
--- Copiando dados para a tabela tasklist.task: ~3 rows (aproximadamente)
+-- Copiando dados para a tabela tasklist.task: ~2 rows (aproximadamente)
 /*!40000 ALTER TABLE `task` DISABLE KEYS */;
 INSERT INTO `task` (`id`, `title`, `description`, `state`, `completed_at`, `created_at`, `updated_at`, `deleted_at`) VALUES
-	(2, 'teste', 'teste', 1, '2018-08-21 00:00:00', NULL, '2018-08-21 00:00:00', NULL),
-	(4, 'teste', 'teste', 0, NULL, '2018-08-21 00:00:00', NULL, '2018-08-21 00:33:42'),
-	(5, 'teste', 'teste', 1, '2018-08-21 00:00:00', '2018-08-21 00:00:00', '2018-08-21 00:00:00', '2018-08-21 00:31:16');
+	(2, 'teste', 'testesdsadsaasd', 0, NULL, NULL, '2018-08-22 00:00:00', NULL),
+	(4, 'teste', 'teste', 1, '2018-08-22 00:00:00', '2018-08-21 00:00:00', '2018-08-22 00:00:00', NULL),
+	(5, 'teste', 'teste', 1, '2018-08-22 00:00:00', '2018-08-21 00:00:00', '2018-08-22 00:00:00', NULL),
+	(6, 'saddssda', 'wooow', 1, '2018-08-22 00:00:00', NULL, '2018-08-22 00:00:00', NULL),
+	(7, 'dsadsa', 'asdasd', 0, NULL, '2018-08-22 00:00:00', NULL, '2018-08-22 01:42:30');
 /*!40000 ALTER TABLE `task` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
